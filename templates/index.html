@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estimador Codex - tech.DevOps</title>
+    <!-- Link Font Awesome FIRST -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-logo-container">
+            <img src="/static/images/devop.webp" alt="DevOps Cycle Logo" class="header-logo-img">
+            <span class="header-text-logo">tech.DevOps</span>
+        </div>
+        <h1><i class="fas fa-calculator"></i> Dashboard Estimador Codex</h1>
+    </header>
+
+    <main class="dashboard-main">
+         <section class="config-panel card">
+            <h2><i class="fas fa-cogs"></i> Configuração</h2>
+            <form id="estimativaForm">
+                <div class="form-group">
+                    <label for="prompt"><i class="fas fa-question-circle"></i> 1️⃣ O que deseja que o Codex faça? (Prompt)</label>
+                    <textarea id="prompt" name="prompt" required placeholder="Ex: Refatore o código para usar async/await, adicione tratamento de erros e documentação."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="arquivos"><i class="fas fa-folder-zip"></i> 2️⃣ Compacte sua pasta de projeto em .zip e selecione</label>
+                    <input type="file" id="arquivos" name="arquivos" multiple required accept=".py,.js,.ts,.html,.css,.json,.java,.txt,.md,.yaml,.yml,.sh,.rb,.php,.go,.rs,.cs,.cpp,.c,.h,.sql,.zip">
+                     <small>Para analisar uma pasta inteira, por favor, crie um arquivo .zip dela e faça o upload desse arquivo. Você também pode selecionar múltiplos arquivos individuais.</small>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-rocket"></i> Gerar Estimativa
+                </button>
+                 <div id="loadingIndicator" class="loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Processando...
+                 </div>
+                 <div id="errorIndicator" class="error-message" style="display: none;">
+                     <i class="fas fa-exclamation-triangle"></i> Erro ao processar. Verifique os arquivos e tente novamente.
+                 </div>
+            </form>
+        </section>
+
+        <section id="resultadoPanel" class="results-panel card" style="display:none;">
+            <h2><i class="fas fa-chart-bar"></i> Resultados da Estimativa</h2>
+
+             <div class="summary">
+                 <p><strong><i class="fas fa-file-alt"></i> Prompt Analisado:</strong></p>
+                 <pre id="promptDisplay"></pre>
+                 <p><strong><i class="fas fa-copy"></i> Arquivos Processados:</strong> <span id="fileCount">0</span></p>
+                 <ul id="fileList"></ul>
+             </div>
+
+            <table id="tabelaResultados">
+                <thead>
+                    <tr>
+                        <th>Modelo OpenAI</th>
+                        <th><i class="fas fa-arrow-down"></i> Tokens Entrada</th>
+                        <th><i class="fas fa-arrow-up"></i> Tokens Saída (Est.)</th>
+                        <th><i class="fas fa-dollar-sign"></i> Custo Estimado (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Results will be populated here by JS -->
+                </tbody>
+            </table>
+            <button id="btnSalvar" class="btn-save">
+                <i class="fas fa-save"></i> Salvar Relatório (CSV)
+            </button>
+        </section>
+    </main>
+
+    <!-- FINAL FOOTER -->
+    <footer class="dashboard-footer">
+        <div class="footer-left">
+             <!-- Text Logo Placed First - CORRECTED -->
+             <span class="footer-text-logo">&lttech.DevOps/&gt</span>
+             <p class="copyright">© 2025 Assis Berlanda de Medeiros. Todos os direitos reservados.</p>
+             <!-- Email with Icon -->
+             <p class="footer-email">
+                <i class="fas fa-envelope footer-email-icon"></i> <!-- Added icon -->
+                berlanda.medeiros@gmail.com
+            </p>
+        </div>
+        <div class="footer-right footer-icons">
+            <a href="https://www.linkedin.com/in/assismedeiros/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/assisberlanda" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://techdevops.replit.app/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio/CV">
+                <i class="fas fa-id-card"></i>
+            </a>
+        </div>
+    </footer>
+    <!-- END FINAL FOOTER -->
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

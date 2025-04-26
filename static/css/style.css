@@ -1,0 +1,502 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack header, main, footer */
+    min-height: 100vh; /* Ensure footer is at least at the bottom */
+}
+
+/* Header Enhancements */
+.dashboard-header {
+    background-color: #1a202c; /* Darker background matching footer example */
+    color: #ecf0f1;
+    padding: 10px 30px; /* Adjust padding */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Push title to the right */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow wrap on small screens */
+    gap: 15px; /* Add gap for wrapping */
+    width: 100%; /* Ensure header spans full width */
+}
+
+/* Container for header image and text logo */
+.header-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between image and text */
+}
+
+.header-logo-img { /* Renamed from header-logo */
+    height: 45px;
+    width: auto;
+    display: block; /* Prevents extra space below image */
+}
+
+/* Style for the text logo in the header */
+.header-text-logo {
+    font-size: 1.6em; /* Adjust size as needed */
+    font-weight: bold;
+    color: #4fd1c5; /* Teal color like footer icons */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Or choose a specific font */
+    line-height: 1; /* Adjust vertical alignment if needed */
+}
+
+.dashboard-header h1 {
+    margin: 0; /* Reset margin */
+    font-size: 1.6em; /* Adjust font size if needed */
+    font-weight: 600;
+    flex-grow: 1; /* Allow it to take remaining space */
+    text-align: right; /* Align text to the right */
+}
+
+.dashboard-header h1 i {
+     margin-right: 10px; /* Keep icon spacing */
+     color: #3498db; /* Blue icon */
+}
+
+
+/* Main Content Area */
+.dashboard-main {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 20px auto; /* Center the main content area */
+    flex-grow: 1; /* Allow main content to fill available space */
+    width: 100%; /* Ensure it takes full width within constraints */
+}
+
+/* Panels (Cards) */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    flex: 1; /* Make panels flexible */
+    min-width: 350px; /* Minimum width before wrapping */
+}
+
+.config-panel {
+   flex-basis: 40%; /* Configuration takes slightly less space initially */
+   max-width: 500px; /* Limit max width */
+}
+
+.results-panel {
+    flex-basis: 55%; /* Results take slightly more space */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column;
+}
+
+
+.card h2 {
+    text-align: left;
+    color: #2c3e50; /* Dark blue-gray */
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.card h2 i {
+    margin-right: 8px;
+    color: #3498db; /* Blue icon */
+}
+
+
+/* Form Styles */
+#estimativaForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1.0em;
+}
+.form-group label i {
+     margin-right: 5px;
+     color: #555;
+}
+.form-group label i.fa-folder-zip { /* Style the zip icon */
+    margin-right: 5px;
+    color: #e67e22; /* Orange color for zip */
+}
+
+
+textarea, input[type="file"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="file"] {
+    background-color: #fff; /* Slightly different bg for file input */
+}
+
+input::file-selector-button { /* Style the "Browse" button */
+    padding: 8px 15px;
+    margin-right: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+input::file-selector-button:hover {
+    background-color: #2980b9;
+}
+
+small {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+button:active {
+    transform: scale(0.98); /* Click feedback */
+}
+
+.btn-submit {
+    background-color: #27ae60; /* Green */
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #229954;
+}
+
+.btn-save {
+    background-color: #3498db; /* Blue */
+    color: white;
+    margin-top: 20px; /* Space above save button */
+    align-self: flex-start; /* Align button left in the results panel */
+}
+
+.btn-save:hover {
+    background-color: #2980b9;
+}
+
+
+/* Results Section */
+.results-panel .summary {
+    margin-bottom: 25px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.summary p {
+    margin-bottom: 8px;
+    font-size: 1.0em;
+}
+
+.summary strong i {
+    margin-right: 5px;
+    color: #555;
+}
+
+
+#promptDisplay {
+    white-space: pre-wrap; /* Keep formatting */
+    word-wrap: break-word; /* Break long words */
+    max-height: 150px; /* Limit height */
+    overflow-y: auto; /* Add scroll if needed */
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#fileList {
+    list-style: none;
+    padding-left: 0;
+    max-height: 100px;
+    overflow-y: auto;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+#fileList li {
+     margin-bottom: 3px;
+     color: #333;
+     word-break: break-all;
+}
+#fileList li::before {
+    content: "\f15b"; /* Font Awesome file icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 6px;
+    color: #777;
+}
+
+/* Results Table */
+#tabelaResultados {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#tabelaResultados th, #tabelaResultados td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#tabelaResultados th {
+    background-color: #34495e; /* Darker blue-gray for header */
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+#tabelaResultados th i {
+    margin-right: 5px;
+}
+
+#tabelaResultados tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Zebra striping */
+}
+
+#tabelaResultados tbody tr:hover {
+    background-color: #e9ecef; /* Hover effect */
+}
+
+#tabelaResultados td:nth-child(1) { /* Model name */
+    text-align: left;
+    font-weight: 500;
+}
+#tabelaResultados td:nth-child(4) { /* Cost */
+    font-weight: bold;
+    color: #c0392b; /* Reddish for cost */
+}
+
+
+/* Loading and Error Indicators */
+.loading, .error-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.loading {
+    color: #2980b9; /* Blue */
+}
+.loading i {
+    margin-right: 5px;
+}
+
+.error-message {
+    color: #c0392b; /* Red */
+    background-color: #fbeae5; /* Light red background */
+    border: 1px solid #e74c3c;
+}
+.error-message i {
+    margin-right: 5px;
+}
+
+
+/* Footer Styles */
+.dashboard-footer {
+    background-color: #1a202c; /* Dark background */
+    color: #a0aec0; /* Light gray text */
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between; /* Space out left and right sections */
+    align-items: center; /* Vertically align content */
+    margin-top: auto; /* Pushes footer to bottom if content is short */
+    border-top: 1px solid #2d3748; /* Subtle top border */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 20px; /* Increased gap for better spacing when wrapped */
+    width: 100%; /* Ensure footer spans full width */
+}
+
+.footer-left {
+    text-align: left;
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Footer Text Logo Style */
+.footer-text-logo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Same family as header text logo */
+    font-size: 1.2em; /* Slightly smaller than header, adjust as needed */
+    font-weight: bold;
+    color: #4fd1c5; /* Teal color */
+    display: block; /* Make it block */
+    margin-bottom: 8px; /* Space below text logo */
+    line-height: 1.2;
+}
+
+.copyright {
+    font-size: 0.85em;
+    color: #718096; /* Darker gray for copyright */
+    margin: 0;
+    line-height: 1.4; /* Adjust line height if needed */
+}
+
+/* Style for the email text and icon in the footer */
+.footer-email {
+    font-size: 0.85em;
+    color: #a0aec0; /* Same color as other footer text */
+    margin-top: 8px; /* Increased space above email */
+    margin-bottom: 0;
+    line-height: 1.4;
+    display: inline-flex; /* Align icon and text inline */
+    align-items: center; /* Vertically center icon with text */
+}
+
+.footer-email-icon {
+    margin-right: 6px; /* Space between icon and email text */
+    color: #4fd1c5; /* Teal color for the icon */
+    font-size: 0.9em; /* Slightly smaller icon */
+}
+
+.footer-right.footer-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    align-items: center;
+}
+
+.footer-icons a {
+    display: inline-flex; /* Use flex for centering icon */
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Circle size */
+    height: 40px; /* Circle size */
+    background-color: #2d3748; /* Slightly lighter circle background */
+    border-radius: 50%; /* Make it a circle */
+    color: #4fd1c5; /* Teal icon color */
+    font-size: 1.1em; /* Icon size */
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-icons a:hover {
+    background-color: #4fd1c5; /* Teal background on hover */
+    color: #1a202c; /* Dark text on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) { /* Adjust breakpoint if needed */
+    .dashboard-main {
+        flex-direction: column; /* Stack panels sooner */
+    }
+    .config-panel, .results-panel {
+        flex-basis: 100%; /* Stack panels */
+        max-width: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+     .dashboard-header {
+         padding: 10px 15px; /* Reduce padding */
+         flex-direction: column; /* Stack logo block and title */
+         align-items: center; /* Center items when stacked */
+         gap: 10px; /* Add gap when stacked */
+     }
+    /* Adjust logo container for stacked layout */
+     .header-logo-container {
+         justify-content: center; /* Center image and text logo */
+     }
+     .header-logo-img {
+         height: 35px; /* Smaller logo */
+     }
+     .header-text-logo {
+         font-size: 1.4em; /* Slightly smaller text logo */
+     }
+      .dashboard-header h1 {
+        font-size: 1.3em;
+        text-align: center; /* Center title when stacked */
+        margin-top: 10px; /* Add space above title when stacked */
+        flex-grow: 0; /* Don't grow when stacked */
+      }
+
+    .dashboard-main {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .card {
+        padding: 20px;
+    }
+    button {
+        font-size: 1em;
+    }
+
+    .dashboard-footer {
+        flex-direction: column; /* Stack left and right sections */
+        text-align: center; /* Center text */
+        padding: 20px;
+        gap: 20px; /* Increase gap when stacked */
+    }
+
+    .footer-left {
+        text-align: center; /* Ensure left content is centered */
+        align-items: center; /* Center items vertically when stacked */
+    }
+     .footer-text-logo {
+         /* Adjust size if needed for mobile */
+         font-size: 1.1em;
+     }
+     .footer-email {
+         justify-content: center; /* Center email icon and text */
+     }
+
+    .footer-right.footer-icons {
+        justify-content: center; /* Center icons */
+        margin-top: 10px; /* Add some space above icons when stacked */
+    }
+}
