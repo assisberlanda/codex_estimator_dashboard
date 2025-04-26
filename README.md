@@ -1,7 +1,7 @@
 # Dashboard Estimador Codex - tech.DevOps
-
-![DevOps Cycle Logo](static/images/devop.webp)
-
+<p align="center">
+<img src="static/images/devop.webp" width="300">
+</p>
 A web-based dashboard application built with Flask to estimate the potential cost of OpenAI API calls for various models (like GPT-3.5 Turbo, GPT-4o Mini, GPT-4o, etc.) based on user-provided prompts and code files.
 
 This tool helps developers anticipate API usage costs before running actual Codex tasks by analyzing the token count of the input context (prompt + code).
@@ -96,7 +96,7 @@ Follow these steps to set up the project locally:
 **Note:** The application currently runs in `debug=True` mode, which is helpful for development (provides detailed error messages and auto-reloads on code changes) but should be turned off for production deployment. It also runs on `host='0.0.0.0'` making it accessible on your local network; change this to `'127.0.0.1'` if you only want it accessible from your own machine.
 
 ## Project Structure
-
+```
 codex_estimator_dashboard/
 ├── estimador_codex_v4.py # Main Flask application file (backend logic)
 ├── templates/
@@ -111,7 +111,7 @@ codex_estimator_dashboard/
 ├── venv/ # Python virtual environment directory (if created)
 ├── requirements.txt # List of Python dependencies
 └── README.md # This file
-
+```
 ## Author
 
 *   **Assis Berlanda de Medeiros**
